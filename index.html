@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PDP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#title1">Title 1</a>
+                    </h4>
+                </div>
+                <div id="title1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+
+
+                        <div class="panel-group" id="accordion">
+                            <div class="panel">
+                                <a data-toggle="collapse" href="#title1-1">sub-title</a>
+                            </div>
+
+                            <div id="title1-1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+
+                                    Code of the 1st Tab
+
+                                    <div class="accessible-tabs-container">
+
+                                        <ul role="tablist" aria-lable="Tabs Example" class="tab-selectors">
+                                            <li class="active-tab-selector"></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                        <p class="text-show-content">Dynamic tabs</p>
+                                        <div class="show-content">
+                                            <style>
+                                                .tabHead {
+                                                    text-align: center;
+                                                }
+                                                
+                                                div#tabContentThree,
+                                                div#tabContentTwo,
+                                                div#tabContentOne {
+                                                    background-color: #f2fafc;
+                                                    padding: 30px;
+                                                    border-bottom-left-radius: 40px;
+                                                    border-bottom-right-radius: 40px;
+                                                }
+                                                
+                                                #tab_1 {
+                                                    background-color: #00a2c9;
+                                                    font-weight: normal;
+                                                }
+                                                
+                                                #tab_2 {
+                                                    background-color: #e1ece4;
+                                                    font-weight: normal;
+                                                    margin: 0 5px;
+                                                }
+                                                
+                                                #tab_3 {
+                                                    background-color: #d6f1f8;
+                                                    font-weight: normal;
+                                                }
+                                                
+                                                .tabLi {
+                                                    color: #ffffff;
+                                                    list-style: none;
+                                                    padding: 15px 18px 10px;
+                                                    cursor: pointer;
+                                                    width: 34%;
+                                                    border: none;
+                                                    border-top-left-radius: 20px;
+                                                    border-top-right-radius: 20px;
+                                                    text-shadow: 0px 0px 5px #9d9d9c;
+                                                }
+                                                
+                                                .tabHead ul {
+                                                    display: flex;
+                                                    padding: 0;
+                                                    width: 100%;
+                                                    margin: auto;
+                                                }
+                                                
+                                                .tabContent p,
+                                                .tabContent li {
+                                                    text-align: justify;
+                                                }
+                                                
+                                                #tabContentTwo,
+                                                #tabContentThree {
+                                                    display: none;
+                                                }
+                                            </style>
+                                            <div class="mainTabDiv">
+                                                <div class="tabHead">
+                                                    <ul>
+                                                        <li class="tabLi" id="tab_1">Tab 1​</li>
+                                                        <li class="tabLi" id="tab_2">Tab 2</li>
+                                                        <li class="tabLi" id="tab_3">Tab 3</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tabContent">
+                                                    <div class="tabContentAll" id="tabContentOne">
+                                                        1
+                                                    </div>
+                                                    <div class="tabContentAll" id="tabContentTwo">
+                                                        2
+
+                                                    </div>
+                                                    <div class="tabContentAll" id="tabContentThree">
+                                                        3
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            window.addEventListener("DOMContentLoaded", function() {
+                                                for (i = 0; i < document.querySelectorAll(".tabLi").length; i++) {
+                                                    document.querySelectorAll(".tabLi")[i].addEventListener("click", function() {
+                                                        for (i = 0; i < document.querySelectorAll(".tabLi").length; i++) {
+                                                            document.querySelectorAll(".tabContentAll")[i].style.display = "none";
+                                                            document.querySelectorAll(".tabLi")[0].style.backgroundColor = "#00a2c9";
+                                                            document.querySelectorAll(".tabLi")[1].style.backgroundColor = "#e1ece4";
+                                                            document.querySelectorAll(".tabLi")[2].style.backgroundColor = "#d6f1f8";
+                                                            document.querySelectorAll(".tabLi")[i].style.color = "#ffffff";
+                                                        }
+                                                        if (this.id == "tab_1") {
+                                                            document.getElementById("tab_1").style.color = "#000000";
+                                                            document.getElementById("tab_1").style.fontWeight = "bold";
+                                                            document.getElementById("tab_2").style.fontWeight = "normal";
+                                                            document.getElementById("tab_3").style.fontWeight = "normal";
+                                                            document.getElementById("tab_1").style.backgroundColor = "#f2fafc";
+                                                            document.getElementById("tabContentOne").style.display = "block";
+                                                        }
+                                                        if (this.id == "tab_2") {
+                                                            document.getElementById("tab_2").style.color = "#000000";
+                                                            document.getElementById("tab_1").style.fontWeight = "normal";
+                                                            document.getElementById("tab_2").style.fontWeight = "bold";
+                                                            document.getElementById("tab_3").style.fontWeight = "normal";
+                                                            document.getElementById("tab_2").style.backgroundColor = "#f2fafc";
+                                                            document.getElementById("tabContentTwo").style.display = "block";
+                                                        }
+                                                        if (this.id == "tab_3") {
+                                                            document.getElementById("tab_3").style.color = "#000000";
+                                                            document.getElementById("tab_1").style.fontWeight = "normal";
+                                                            document.getElementById("tab_2").style.fontWeight = "normal";
+                                                            document.getElementById("tab_3").style.fontWeight = "bold";
+                                                            document.getElementById("tab_3").style.backgroundColor = "#f2fafc";
+                                                            document.getElementById("tabContentThree").style.display = "block";
+                                                        }
+                                                    })
+                                                }
+                                            });
+                                        </script>
+                                        <div class="tab-contents">
+                                            <div class="tab-content-active">
+
+                                                <p>
+                                                    <xmp>
+                                                        <div class="mainTabDiv">
+                                                            <div class="tabHead">
+                                                                <ul>
+                                                                    <li class="tabLi" id="tab_1">Tab 1​</li>
+                                                                    <li class="tabLi" id="tab_2">Tab 2</li>
+                                                                    <li class="tabLi" id="tab_3">Tab 3</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="tabContent">
+                                                                <div class="tabContentAll" id="tabContentOne">
+                                                                    1
+                                                                </div>
+                                                                <div class="tabContentAll" id="tabContentTwo">
+                                                                    2
+
+                                                                </div>
+                                                                <div class="tabContentAll" id="tabContentThree">
+                                                                    3
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </xmp>
+                                                </p>
+                                                <p class="copyableInput grey49" id="p10">
+                                                    <!-- <body>
+                                                        <div class="mainTabDiv">
+                                                            <div class="tabHead">
+                                                                <ul>
+                                                                    <li class="tabLi" id="tab_1">In Wasser​</li>
+                                                                    <li class="tabLi" id="tab_2">In Milcharten</li>
+                                                                    <li class="tabLi" id="tab_3">In anderen Flüssigkeiten
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="tabContent">
+                                                                <div class="tabContentAll" id="tabContentOne">
+                                                                    1
+                                                                </div>
+                                                                <div class="tabContentAll" id="tabContentTwo">
+                                                                    2
+
+                                                                </div>
+                                                                <div class="tabContentAll" id="tabContentThree">
+                                                                    3
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                   </body> -->
+                                                </p>
+                                                <button class="copyableInputButton" onclick="copyToClipboard('p10')" onmouseout="outFunc()">COPY HTML</button>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    <xmp>
+                                                        <!-- 
+                                                        <style>
+                                                        .tabHead {
+                                                            text-align: center;
+                                                        }
+                                                        
+                                                        div#tabContentThree,
+                                                        div#tabContentTwo,
+                                                        div#tabContentOne {
+                                                            background-color: #f2fafc;
+                                                            padding: 30px;
+                                                            border-bottom-left-radius: 40px;
+                                                            border-bottom-right-radius: 40px;
+                                                        }
+                                                        
+                                                        #tab_1 {
+                                                            background-color: #00a2c9;
+                                                            font-weight: normal;
+                                                        }
+                                                        
+                                                        #tab_2 {
+                                                            background-color: #e1ece4;
+                                                            font-weight: normal;
+                                                            margin: 0 5px;
+                                                        }
+                                                        
+                                                        #tab_3 {
+                                                            background-color: #d6f1f8;
+                                                            font-weight: normal;
+                                                        }
+                                                        
+                                                        .tabLi {
+                                                            color: #ffffff;
+                                                            list-style: none;
+                                                            padding: 15px 18px 10px;
+                                                            cursor: pointer;
+                                                            width: 34%;
+                                                            border: none;
+                                                            border-top-left-radius: 20px;
+                                                            border-top-right-radius: 20px;
+                                                            text-shadow: 0px 0px 5px #9d9d9c;
+                                                        }
+                                                        
+                                                        .tabHead ul {
+                                                            display: flex;
+                                                            padding: 0;
+                                                            width: 100%;
+                                                            margin: auto;
+                                                        }
+                                                        
+                                                        .tabContent p,
+                                                        .tabContent li {
+                                                            text-align: justify;
+                                                        }
+                                                        
+                                                        #tabContentTwo,
+                                                        #tabContentThree {
+                                                            display: none;
+                                                        }
+
+                                                       </style> 
+                                                    -->
+                                                    </xmp>
+                                                </p>
+
+                                                <p class="copyableInput grey49" id="p11">
+                                                    <!-- 
+                                                        <style>
+                                                    .tabHead {
+                                                            text-align: center;
+                                                        }
+                                                        
+                                                        div#tabContentThree,
+                                                        div#tabContentTwo,
+                                                        div#tabContentOne {
+                                                            background-color: #f2fafc;
+                                                            padding: 30px;
+                                                            border-bottom-left-radius: 40px;
+                                                            border-bottom-right-radius: 40px;
+                                                        }
+                                                        
+                                                        #tab_1 {
+                                                            background-color: #00a2c9;
+                                                            font-weight: normal;
+                                                        }
+                                                        
+                                                        #tab_2 {
+                                                            background-color: #e1ece4;
+                                                            font-weight: normal;
+                                                            margin: 0 5px;
+                                                        }
+                                                        
+                                                        #tab_3 {
+                                                            background-color: #d6f1f8;
+                                                            font-weight: normal;
+                                                        }
+                                                        
+                                                        .tabLi {
+                                                            color: #ffffff;
+                                                            list-style: none;
+                                                            padding: 15px 18px 10px;
+                                                            cursor: pointer;
+                                                            width: 34%;
+                                                            border: none;
+                                                            border-top-left-radius: 20px;
+                                                            border-top-right-radius: 20px;
+                                                            text-shadow: 0px 0px 5px #9d9d9c;
+                                                        }
+                                                        
+                                                        .tabHead ul {
+                                                            display: flex;
+                                                            padding: 0;
+                                                            width: 100%;
+                                                            margin: auto;
+                                                        }
+                                                        
+                                                        .tabContent p,
+                                                        .tabContent li {
+                                                            text-align: justify;
+                                                        }
+                                                        
+                                                        #tabContentTwo,
+                                                        #tabContentThree {
+                                                            display: none;
+                                                        }
+</style> -->
+                                                </p>
+                                                <button class="copyableInputButton" onclick="copyToClipboard('p11')" onmouseout="outFunc()">COPY
+                                                    CSS</button>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    <xmp>
+                                                        <!-- 
+                                                        <script>
+                                                        window.addEventListener("DOMContentLoaded", function() {
+                                                            for (i = 0; i < document.querySelectorAll(".tabLi").length; i++) {
+                                                                document.querySelectorAll(".tabLi")[i].addEventListener("click", function() {
+                                                                    for (i = 0; i < document.querySelectorAll(".tabLi").length; i++) {
+                                                                        document.querySelectorAll(".tabContentAll")[i].style.display = "none";
+                                                                        document.querySelectorAll(".tabLi")[0].style.backgroundColor = "#00a2c9";
+                                                                        document.querySelectorAll(".tabLi")[1].style.backgroundColor = "#e1ece4";
+                                                                        document.querySelectorAll(".tabLi")[2].style.backgroundColor = "#d6f1f8";
+                                                                        document.querySelectorAll(".tabLi")[i].style.color = "#ffffff";
+                                                                    }
+                                                                    if (this.id == "tab_1") {
+                                                                        document.getElementById("tab_1").style.color = "#000000";
+                                                                        document.getElementById("tab_1").style.fontWeight = "bold";
+                                                                        document.getElementById("tab_2").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_3").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_1").style.backgroundColor = "#f2fafc";
+                                                                        document.getElementById("tabContentOne").style.display = "block";
+                                                                    }
+                                                                    if (this.id == "tab_2") {
+                                                                        document.getElementById("tab_2").style.color = "#000000";
+                                                                        document.getElementById("tab_1").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_2").style.fontWeight = "bold";
+                                                                        document.getElementById("tab_3").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_2").style.backgroundColor = "#f2fafc";
+                                                                        document.getElementById("tabContentTwo").style.display = "block";
+                                                                    }
+                                                                    if (this.id == "tab_3") {
+                                                                        document.getElementById("tab_3").style.color = "#000000";
+                                                                        document.getElementById("tab_1").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_2").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_3").style.fontWeight = "bold";
+                                                                        document.getElementById("tab_3").style.backgroundColor = "#f2fafc";
+                                                                        document.getElementById("tabContentThree").style.display = "block";
+                                                                    }
+                                                                })
+                                                            }
+                                                        });
+
+                                                    </script> 
+                                                    -->
+                                                    </xmp>
+                                                </p>
+                                                <p class="copyableInput grey49" id="p12">
+                                                    <!-- <script> 
+                                                        window.addEventListener("DOMContentLoaded", function() {
+                                                            for (i = 0; i < document.querySelectorAll(".tabLi").length; i++) {
+                                                                document.querySelectorAll(".tabLi")[i].addEventListener("click", function() {
+                                                                    for (i = 0; i < document.querySelectorAll(".tabLi").length; i++) {
+                                                                        document.querySelectorAll(".tabContentAll")[i].style.display = "none";
+                                                                        document.querySelectorAll(".tabLi")[0].style.backgroundColor = "#00a2c9";
+                                                                        document.querySelectorAll(".tabLi")[1].style.backgroundColor = "#e1ece4";
+                                                                        document.querySelectorAll(".tabLi")[2].style.backgroundColor = "#d6f1f8";
+                                                                        document.querySelectorAll(".tabLi")[i].style.color = "#ffffff";
+                                                                    }
+                                                                    if (this.id == "tab_1") {
+                                                                        document.getElementById("tab_1").style.color = "#000000";
+                                                                        document.getElementById("tab_1").style.fontWeight = "bold";
+                                                                        document.getElementById("tab_2").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_3").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_1").style.backgroundColor = "#f2fafc";
+                                                                        document.getElementById("tabContentOne").style.display = "block";
+                                                                    }
+                                                                    if (this.id == "tab_2") {
+                                                                        document.getElementById("tab_2").style.color = "#000000";
+                                                                        document.getElementById("tab_1").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_2").style.fontWeight = "bold";
+                                                                        document.getElementById("tab_3").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_2").style.backgroundColor = "#f2fafc";
+                                                                        document.getElementById("tabContentTwo").style.display = "block";
+                                                                    }
+                                                                    if (this.id == "tab_3") {
+                                                                        document.getElementById("tab_3").style.color = "#000000";
+                                                                        document.getElementById("tab_1").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_2").style.fontWeight = "normal";
+                                                                        document.getElementById("tab_3").style.fontWeight = "bold";
+                                                                        document.getElementById("tab_3").style.backgroundColor = "#f2fafc";
+                                                                        document.getElementById("tabContentThree").style.display = "block";
+                                                                    }
+                                                                })
+                                                            }
+                                                        });
+                                                    </script>-->
+
+                                                </p>
+                                                <button class="copyableInputButton" onclick="copyToClipboard('p12')" onmouseout="outFunc()">COPY JS</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="panel">
+                                <a data-toggle="collapse" href="#title1-2">sub-title 2</a>
+                            </div>
+
+                            <div id="title1-2" class="collapse">
+                                <div class="panel-body">
+                                    Code of the 2nd Tab
+
+                                    <div class="accessible-tabs-container">
+
+                                        <ul role="tablist" aria-lable="Tabs Example" class="tab-selectors">
+                                            <li class="active-tab-selector"></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+
+                                        <div class="tab-contents">
+                                            <div class="tab-content-active">
+                                                <p class="copyableInput grey49" id="p20">Tab Content 2.1</p>
+                                                <button class="copyableInputButton" onclick="copyToClipboard('p20')" onmouseout="outFunc()">COPY</button>
+                                            </div>
+                                            <div>
+                                                <p class="copyableInput grey49" id="p21">Tab Content 2.2</p>
+                                                <button class="copyableInputButton" onclick="copyToClipboard('p21')" onmouseout="outFunc()">COPY</button>
+                                            </div>
+                                            <div>
+                                                <p class="copyableInput grey49" id="p22">Tab Content 2.3</p>
+                                                <button class="copyableInputButton" onclick="copyToClipboard('p22')" onmouseout="outFunc()">COPY</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#title2">Title 2</a>
+                    </h4>
+                </div>
+                <div id="title2" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+
+                        <!--- STUFF --->
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#title3">Title 3</a>
+                    </h4>
+                </div>
+                <div id="title3" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                        <!--- STUFF --->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Materials used:<br>
+            <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion">w3schools accordion</a><br>
+            <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_copy_clipboard2">w3schools copy
+                clipboard</a><br>
+            <a href="https://stackoverflow.com/questions/48694721/using-javascript-to-copy-multiple-elements-text-values-to-the-users-clipboard">stackoverflow
+                copy clipboard</a> =>
+            <a href="https://jsfiddle.net/j0cqm1dh/">jsfiddle copy clipboards</a><br>
+            <a href="https://blog.usman-s.me/easy-copy-to-clipboard-button-in-vanilla-javascript">blog.usman-s copy
+                clipboard</a><br>
+            <a href="https://stackoverflow.com/questions/42325591/collapseable-accordion-inside-another-accordion">stackoverflow
+                accordion in accordion</a><br>
+            <a href="https://stackoverflow.com/questions/61603737/adding-multiple-vanilla-javascript-tabs-to-the-same-page">stackoverflow
+                multiple dynamic tabs</a> = > <a href="https://codepen.io/joao-goncalves/pen/ZXYGmo">codepen multiple
+                dynamic tabs</a><br>
+            <p>Borders</p>
+            <a href="https://css-tricks.com/stacked-borders/">stacked-borders</a> <br>
+            <a href="https://stackoverflow.com/questions/37810361/rotate-only-the-border-using-css">rotate border-</a> => <a href="https://jsfiddle.net/yp7je9n2/">JSFiddle</a><br>
+
+        </p>
+
+    </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active"); +
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+    <script>
+        function myFunction() {
+
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Copied: " + 'CSS';
+        }
+
+        function outFunc() {
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Copy to clipboard";
+        }
+    </script>
+
+    <script>
+        function copyToClipboard(target) {
+            var element = document.getElementById(target);
+            var text = element.innerHTML;
+            CopyToClipboard(text);
+        }
+
+        function CopyToClipboard(text) {
+            if (window.clipboardData && window.clipboardData.setData) {
+                return clipboardData.setData("Text", text);
+
+            } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+                var textarea = document.createElement("textarea");
+                textarea.textContent = text;
+                textarea.style.position = "fixed";
+                document.body.appendChild(textarea);
+                textarea.select();
+
+                try {
+                    return document.execCommand("copy");
+                } catch (ex) {
+                    console.warn("Copy to clipboard failed.", ex);
+                    return false;
+                } finally {
+                    document.body.removeChild(textarea);
+                }
+            }
+        }
+    </script>
+    <script>
+        var accessibleTabsContainers = document.querySelectorAll('.accessible-tabs-container');
+        var tabSelector = document.querySelectorAll('.tab-selectors > li');
+        var tabContent = document.querySelectorAll('.tab-contents > div');
+        var largeRandNumber = Math.floor((Math.random() * 1000) + 1000);
+
+        accessibleTabsContainers.forEach(function(elem, indexAccessibleTabContainer) {
+            elem.setAttribute('data-id', indexAccessibleTabContainer);
+
+            tabSelector.forEach(function(singleTabSelector, i) {
+
+                var ariaControlTabContent = 'tab-content-' + largeRandNumber + '-' + i + '_' + indexAccessibleTabContainer;
+                var tabSelectorId = 'tab-selector-' + largeRandNumber + '-' + i + '_' + indexAccessibleTabContainer;
+
+                singleTabSelector.setAttribute('data-id', i);
+                singleTabSelector.setAttribute('id', tabSelectorId);
+                singleTabSelector.setAttribute('aria-controls', ariaControlTabContent);
+
+                tabContent[i].setAttribute('data-id', i);
+                tabContent[i].setAttribute('tabindex', 0);
+                tabContent[i].setAttribute('role', 'tabpanel');
+                tabContent[i].setAttribute('id', ariaControlTabContent);
+                tabContent[i].setAttribute('aria-labeledby', tabSelectorId);
+
+                if (i === 0) {
+                    tabSelector[i].setAttribute('aria-pressed', 'true');
+                } else {
+                    tabSelector[i].setAttribute('aria-pressed', 'false');
+                    tabSelector[i].setAttribute('tabindex', -1);
+                }
+            });
+        });
+
+
+        function onTabSelectorClick(e) {
+
+            accessibleTabsContainers.forEach(function(accessibleTabsContainer, indexAccessibleTabContainer) {
+                var tabSelectorSelected = e.target;
+                var accessibleTabsContainerSelected = tabSelectorSelected.parentElement.parentElement;
+
+                if (!tabSelectorSelected.classList.contains('active-tab-selector')) {
+
+                    var tabSelectorSelectedFromContainer = accessibleTabsContainerSelected.querySelectorAll('.tab-contents > div');
+                    console.log(tabSelectorSelectedFromContainer);
+
+                    tabSelector.forEach(function(singleTabSelected, i) {
+                        if (tabSelectorSelected.getAttribute('data-id') === tabContent[i].getAttribute('data-id')) {
+                            tabContent[i].classList.add('tab-content-active');
+                        } else {
+                            tabSelector[i].classList.remove('active-tab-selector');
+                            tabSelector[i].setAttribute('aria-pressed', 'false');
+                            tabSelector[i].setAttribute('aria-selected', 'false');
+                            tabSelector[i].setAttribute('tabindex', -1);
+                            tabContent[i].classList.remove('tab-content-active');
+                        }
+                    });
+
+                    tabSelectorSelected.classList.add('active-tab-selector');
+                    tabSelectorSelected.setAttribute('aria-pressed', 'true');
+                    tabSelectorSelected.setAttribute('aria-selected', 'true');
+                    tabSelectorSelected.removeAttribute('tabindex');
+                }
+
+            });
+        }
+
+        tabSelector.forEach(function(tabSelector) {
+            tabSelector.addEventListener('click', onTabSelectorClick);
+        });
+    </script>
+</body>
+
+</html>
