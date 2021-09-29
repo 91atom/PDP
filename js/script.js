@@ -52,3 +52,60 @@ function onTabSelectorClick(e) {
 tabSelector.forEach(function(tabSelector) {
     tabSelector.addEventListener('click', onTabSelectorClick);
 });
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+
+function copyToClipboard(target) {
+    var element = document.getElementById(target);
+    var text = element.innerHTML;
+    CopyToClipboard(text);
+    console.log(element);
+    /* only for  First
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied to clipboard";
+    */
+    var buttons = document.querySelectorAll('.copyableInputButton');
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+            event.target.classList.add("show-tooltip-message");
+            console.log(event.target);
+            setTimeout(function() {
+                event.target.classList.remove("show-tooltip-message");
+            }, 2000);
+        });
+    });
+}
+
+function CopyToClipboard(text) {
+    if (window.clipboardData && window.clipboardData.setData) {
+        return clipboardData.setData("Text", text);
+
+    } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+        var textarea = document.createElement("textarea");
+        textarea.textContent = text;
+        textarea.style.position = "fixed";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            return document.execCommand("copy");
+        } catch (ex) {
+            console.warn("Copy to clipboard failed.", ex);
+            return false;
+        } finally {
+            document.body.removeChild(textarea);
+        }
+    }
+}
