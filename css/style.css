@@ -267,6 +267,23 @@ xmp {
     justify-content: center;
 }
 
+.materials {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.materials a {
+    display: contents;
+    color: red;
+}
+
+.materials p {
+    font-size: 20px;
+    font-family: emoji;
+}
+
 ::-webkit-scrollbar {
     width: 15px;
     height: 15px;
