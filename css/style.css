@@ -1,5 +1,3 @@
-/* Start added by me */
-
 code {
     background-color: #00000000 !important;
 }
@@ -10,28 +8,45 @@ code {
     }
 }
 
+.text-show-content {
+    text-align: center;
+    font-size: 30px;
+    font-family: fantasy;
+    border: 5px solid black;
+    background: #ffffff6b;
+}
+
+.show-content {
+    padding: 150px;
+    border: 5px solid black;
+    background: black;
+}
+
 .tab-contents {
-    width: 80%;
     text-align: left;
     margin: auto;
+    background: white;
+    padding: 50px 340px;
 }
 
 .tab-selectors {
     display: flex;
     list-style: none;
     justify-content: center;
+    margin: 0px;
+    padding: 20px 0px;
 }
 
 .tab-selectors li:nth-child(1) {
-    background-image: url(file:///E:/web/Websites/PDP/PDP/img/html.png);
+    background-image: url(../img/html.png);
 }
 
 .tab-selectors li:nth-child(2) {
-    background-image: url(file:///E:/web/Websites/PDP/PDP/img/css.png);
+    background-image: url(../img/css.png);
 }
 
 .tab-selectors li:nth-child(3) {
-    background-image: url(file:///E:/web/Websites/PDP/PDP/img/js.png);
+    background-image: url(../img/js.png);
 }
 
 .tab-selectors li {
@@ -44,32 +59,80 @@ code {
     background-origin: content-box;
 }
 
-.panel {
-    background: #e70000ba !important;
+.collapse.in {
+    background-image: linear-gradient( 334deg, #f70000, #97000094) !important;
+    padding: 5px;
 }
 
+
+/*
 .collapse.in {
-    display: block;
-    background: linear-gradient( 334deg, #fff486ad, #00cdef94) !important;
+    background-image: linear-gradient( 334deg, #f70000, #97000094) !important;
+    color: hsl(324, 70%, 45%);
+    animation: wheelHueColor 10s infinite;
+    background-color: currentColor;
+    padding: 5px;
 }
+
+@supports (background-blend-mode: overlay) {
+    .collapse.in {
+        background-image: linear-gradient(45deg, white 10%, black 90%);
+        background-blend-mode: overlay;
+    }
+}
+
+@keyframes wheelHueColor {
+    from,
+    to {
+        color: hsla(0, 100%, 50%, 0.5);
+    }
+    25% {
+        color: hsla(0, 100%, 25%, 0.5);
+    }
+    50% {
+        color: hsla(0, 100%, 0%, 0.5);
+    }
+    75% {
+        color: hsla(0, 100%, 75%, 0.5);
+    }
+    100% {
+        color: hsla(0, 100%, 50%, 0.5);
+    }
+}
+*/
 
 #accordion>div:nth-child(n)>a {
-    color: black;
+    display: block;
+    color: #000000;
     text-align: center;
-    text-shadow: 1px 1px #ffffff4d;
+    font-size: 30px;
+    font-family: fantasy;
+    border: 5px solid black;
+    background: #ffffff6b;
 }
 
-
-/* End added by me */
+.panel-body {
+    margin: 0px 15px;
+    padding: 0px !important;
+    border-top: 0px solid #ddd !important;
+}
 
 .panel {
     border-color: #EEEEEE !important;
+    border: 0px !important;
+    background: linear-gradient( 340deg, #000000, #ffffff);
+}
+
+.panel-title {
+    background: #ff4c4c;
+    display: inline;
+    padding: 5px 25px;
+    border-radius: 50px;
+    color: #ffffff !important;
 }
 
 .panel>.panel-heading {
-    background-color: greenyellow;
-    color: white;
-    height: 40px;
+    background-color: black !important;
     text-align: center;
     border-color: black !important;
     font-size: 20px;
@@ -86,31 +149,56 @@ code {
     text-align: left !important;
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
+.tooltip-parent {
+    background: linear-gradient( 343deg, #b70707, #ca000075);
+    border-radius: 85px;
+    border-top-left-radius: 130px;
+    border-top-right-radius: 0px;
+    margin: 0 0 0 100px;
 }
 
-.tooltip .tooltiptext {
+.tooltip-div {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+}
+
+.tooltip-div .tooltiptext {
+    display: table;
     visibility: hidden;
-    width: 140px;
-    background-color: #555;
+    width: 100%;
+    background-color: #00cd77;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 50px;
     padding: 5px;
     position: absolute;
     z-index: 1;
     bottom: 150%;
-    left: 50%;
-    margin-left: -75px;
     opacity: 0;
+    left: 0%;
     transition: opacity 0.3s;
+}
+
+button.copyableInputButton.show-tooltip-message .tooltiptext {
+    visibility: visible;
+    opacity: 0;
+    -webkit-animation-name: Hide;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: initial;
+    -webkit-animation-timing-function: ease-out;
+    -moz-animation-name: Hide;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-out;
+    -ms-animation-name: Hide;
+    -ms-animation-duration: 2s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: ease-out;
 }
 
 .tab-contents>div {
     background-color: #000;
-    padding: 10px;
     color: white;
     border: 2px solid #d80000;
     border-radius: 15px;
@@ -119,103 +207,43 @@ code {
 }
 
 button.copyableInputButton {
-    color: white;
-    background: #970000;
-    border-radius: 20px;
+    color: #ff0000 !important;
+    text-transform: uppercase;
+    background: #000000;
+    border: 4px solid #ff0000 !important;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+
+button.copyableInputButton:hover {
+    color: #20bf6b !important;
+    border-radius: 50px;
+    border-color: #20bf6b !important;
+    transition: all 0.3s ease 0s;
+}
+
+button.copyableInputButton:active {
+    background: #ffffff;
 }
 
 .tab-selectors>.active-tab-selector {
     border-radius: 50%;
     border: 2px dashed #000;
-    -webkit-animation-name: Scale;
-    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: Rotate-and-Scale;
+    -webkit-animation-duration: 1s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
-    -moz-animation-name: Rotate;
-    -moz-animation-duration: 2s;
+    -moz-animation-name: Rotate-and-Scale;
+    -moz-animation-duration: 1s;
     -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: jump-both;
-    -ms-animation-name: Rotate;
-    -ms-animation-duration: 2s;
+    -moz-animation-timing-function: ease-in-out;
+    -ms-animation-name: Rotate-and-Scale;
+    -ms-animation-duration: 1s;
     -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: jump-both;
+    -ms-animation-timing-function: ease-in-out;
     padding: 5px;
 }
-
-@-webkit-keyframes Scale {
-    from {
-        -webkit-transform: scale(1);
-    }
-    to {
-        -webkit-transform: scale(1.3);
-    }
-}
-
-
-/*
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
-
-.active,
-.accordion:hover {
-    background-color: #ccc;
-}
-
-.panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-    overflow: hidden;
-}
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 140px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    left: 50%;
-    margin-left: -75px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-*/
 
 .wrapper {
     max-width: 960px;
@@ -228,4 +256,67 @@ button.copyableInputButton {
 
 .tab-contents>.tab-content-active {
     display: block;
+}
+
+xmp {
+    overflow-y: auto;
+    height: 550px;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cc1717;
+}
+
+::-webkit-scrollbar-corner {
+    background: #b40707;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient( 343deg, #b70707, #ca000075);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+@-webkit-keyframes Rotate-and-Scale {
+    0% {
+        transform: rotate( 0deg) scale(1);
+    }
+    25% {
+        transform: rotate( 40deg) scale(1.3);
+    }
+    50% {
+        transform: rotate( 0deg) scale(1);
+    }
+    75% {
+        transform: rotate( -40deg) scale(1.3);
+    }
+    100% {
+        transform: rotate( 0deg) scale(1);
+    }
+}
+
+@-webkit-keyframes Hide {
+    0% {
+        opacity: 0;
+        top: 0px;
+    }
+    30% {
+        opacity: 1;
+        top: -45px;
+    }
+    100% {
+        opacity: 0;
+        top: 0px;
+    }
 }
