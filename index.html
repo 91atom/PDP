@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
@@ -210,7 +207,7 @@
                                                 </p>
                                                 <div class="tooltip-parent">
                                                     <div class="tooltip-div">
-                                                        <button class="copyableInputButton" onclick="copyToClipboard('p10')"><span class="tooltiptext myTooltip" id="myTooltip">Copied</span>COPY HTML</button>
+                                                        <button class="copyableInputButton" onclick="copyToClipboard('p10')" onmouseout="outFunc()"><span class="tooltiptext myTooltip" id="myTooltip">Copied</span>COPY HTML</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -465,11 +462,11 @@
                                             </div>
                                             <div>
                                                 <p class="copyableInput grey49" id="p21">Tab Content 2.2</p>
-                                                <button class="copyableInputButton" onclick="copyToClipboard('p21')">COPY</button>
+                                                <button class="copyableInputButton" onclick="copyToClipboard('p21')" onmouseout="outFunc()">COPY</button>
                                             </div>
                                             <div>
                                                 <p class="copyableInput grey49" id="p22">Tab Content 2.3</p>
-                                                <button class="copyableInputButton" onclick="copyToClipboard('p22')">COPY</button>
+                                                <button class="copyableInputButton" onclick="copyToClipboard('p22')" onmouseout="outFunc()">COPY</button>
                                             </div>
                                         </div>
                                     </div>
@@ -531,6 +528,9 @@
             <a href="https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp">howto_css_custom_scrollbar</a><br>
         </p>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
@@ -545,6 +545,49 @@
                     panel.style.display = "block";
                 }
             });
+        }
+    </script>
+    <script>
+        function copyToClipboard(target) {
+            var element = document.getElementById(target);
+            var text = element.innerHTML;
+            CopyToClipboard(text);
+            console.log(element);
+            /* only for  First
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Copied to clipboard";
+            */
+            var buttons = document.querySelectorAll('.copyableInputButton');
+            buttons.forEach((btn) => {
+                btn.addEventListener("click", (event) => {
+                    event.target.classList.add("show-tooltip-message");
+                    console.log(event.target);
+                    setTimeout(function() {
+                        event.target.classList.remove("show-tooltip-message");
+                    }, 2000);
+                });
+            });
+        }
+
+        function CopyToClipboard(text) {
+            if (window.clipboardData && window.clipboardData.setData) {
+                return clipboardData.setData("Text", text);
+
+            } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+                var textarea = document.createElement("textarea");
+                textarea.textContent = text;
+                textarea.style.position = "fixed";
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    return document.execCommand("copy");
+                } catch (ex) {
+                    console.warn("Copy to clipboard failed.", ex);
+                    return false;
+                } finally {
+                    document.body.removeChild(textarea);
+                }
+            }
         }
     </script>
 </body>
