@@ -262,6 +262,9 @@ xmp {
     overflow-y: auto;
     height: 550px;
     width: 100%;
+    white-space: pre-line;
+    display: flex;
+    justify-content: center;
 }
 
 ::-webkit-scrollbar {
