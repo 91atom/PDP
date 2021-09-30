@@ -101,7 +101,7 @@ code {
 }
 */
 
-#accordion>div:nth-child(n)>a {
+#accordion div:nth-child(n)>a {
     display: block;
     color: #000000;
     text-align: center;
