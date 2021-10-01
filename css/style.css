@@ -146,7 +146,7 @@ button.copyableInputButton:hover {
 
 .panel {
     border: 0px !important;
-    background: linear-gradient( 340deg, #774212, #d3bba8);
+    background: linear-gradient( 340deg, #171c8f, #d3bba8);
 }
 
 .panel>.panel-heading {
