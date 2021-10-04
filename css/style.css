@@ -2,6 +2,15 @@ code {
     background-color: #00000000 !important;
 }
 
+body,
+* {
+    transition: all 0.5s ease 0s !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 @media (min-width: 1200px) {
     .container {
         width: 100% !important;
@@ -126,9 +135,13 @@ button.copyableInputButton:hover {
     color: #caa2dd;
 }
 
+.materials.color-1 a {
+    color: red;
+}
+
 .materials p {
-    font-size: 20px;
-    font-family: emoji;
+    font-family: 'Ephesis', cursive !important;
+    font-size: 30px;
 }
 
 .collapse.in {
@@ -136,12 +149,27 @@ button.copyableInputButton:hover {
     padding: 5px;
 }
 
+.panel.color-1 .collapse.in {
+    background-image: linear-gradient( 334deg, #f70000, #97000094) !important;
+}
+
+.collapse.color-1.in {
+    background-image: linear-gradient( 334deg, #f70000, #97000094) !important;
+}
+
 .panel-title {
+    font-family: 'Cinzel', serif;
     background: #ffffff;
     display: inline;
+    font-size: 22px !important;
     padding: 5px 25px;
     border-radius: 50px;
     color: #485cc7 !important;
+}
+
+.panel.color-1 .panel-title {
+    background: #ff4c4c;
+    color: #ffffff !important;
 }
 
 .panel {
@@ -149,10 +177,19 @@ button.copyableInputButton:hover {
     background: linear-gradient( 340deg, #171c8f, #d3bba8);
 }
 
+.panel.color-1 {
+    background: linear-gradient( 340deg, #000000, #ffffff);
+}
+
 .panel>.panel-heading {
     background-color: #b8ccea !important;
     text-align: center;
     font-size: 20px;
+}
+
+.panel.color-1>.panel-heading {
+    background-color: black !important;
+    border-color: black !important;
 }
 
 .panel-body {
@@ -209,7 +246,7 @@ button.copyableInputButton:hover {
     color: #000000;
     text-align: center;
     font-size: 30px;
-    font-family: fantasy;
+    font-family: 'Abril Fatface', cursive;
     border: 5px solid black;
     background: #ffffff6b;
 }
@@ -227,6 +264,10 @@ button.copyableInputButton:hover {
     margin: 0 0 0 100px;
 }
 
+.panel.color-1 .tooltip-parent {
+    background: linear-gradient( 343deg, #b70707, #ca000075);
+}
+
 .tooltip-div {
     position: relative;
     display: inline-block;
@@ -237,7 +278,7 @@ button.copyableInputButton:hover {
     display: table;
     visibility: hidden;
     width: 100%;
-    background-color: #00cd77;
+    background-color: #c6007e;
     color: #fff;
     text-align: center;
     border-radius: 50px;
@@ -248,6 +289,10 @@ button.copyableInputButton:hover {
     opacity: 0;
     left: 0%;
     transition: opacity 0.3s;
+}
+
+.panel.color-1 .tooltip-div .tooltiptext {
+    background-color: #00cd77;
 }
 
 button.copyableInputButton.show-tooltip-message .tooltiptext {
@@ -276,6 +321,10 @@ button.copyableInputButton.show-tooltip-message .tooltiptext {
     display: none;
 }
 
+.panel.color-1 .tab-contents>div {
+    border: 2px solid #d80000;
+}
+
 button.copyableInputButton {
     color: #485cc7 !important;
     text-transform: uppercase;
@@ -287,11 +336,21 @@ button.copyableInputButton {
     transition: all 0.3s ease 0s;
 }
 
+.panel.color-1 button.copyableInputButton {
+    color: #ff0000 !important;
+    border: 4px solid #ff0000 !important;
+}
+
 button.copyableInputButton:hover {
     color: #c6007e !important;
     border-radius: 50px;
     border-color: #c6007e !important;
     transition: all 0.3s ease 0s;
+}
+
+.panel.color-1 button.copyableInputButton:hover {
+    color: #20bf6b !important;
+    border-color: #20bf6b !important;
 }
 
 button.copyableInputButton:active {
@@ -338,40 +397,182 @@ xmp {
     justify-content: center;
 }
 
-::-webkit-scrollbar {
+.side-button {
+    font-family: fantasy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 55px;
+    height: 55px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#toTopBtn {
+    bottom: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+#toTopBtn:hover {
+    background-color: #fff;
+    color: red;
+    border: 1px solid red;
+}
+
+button#toTopBtn.color-1 {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+button#toTopBtn.color-1:hover {
+    background: black;
+    color: white;
+    border: 1px solid white;
+}
+
+#switcher {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#switcher li {
+    top: 20px;
+    right: 20px;
+}
+
+li#firstColor {
+    background: red;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+li#firstColor:hover {
+    background-color: #fff;
+    color: red;
+    border: 1px solid red;
+}
+
+li#secondColor {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
+
+li#secondColor:hover {
+    background: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.hide {
+    display: none;
+}
+
+ ::-webkit-scrollbar {
     width: 15px;
     height: 15px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+ ::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+.panel ::-webkit-scrollbar-thumb:hover {
     background: #c6007e;
 }
 
-::-webkit-scrollbar-corner {
+.panel.color-1 ::-webkit-scrollbar-thumb:hover {
+    background: #cc1717;
+}
+
+ ::-webkit-scrollbar-corner {
     background: #c6007e;
     border-radius: 50%;
 }
 
-::-webkit-scrollbar-thumb {
+.panel.color-1 ::-webkit-scrollbar-corner {
+    background: #b40707;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: silver;
+    border-radius: 10px;
+}
+
+.panel ::-webkit-scrollbar-thumb {
     background: linear-gradient( 343deg, #caa2dd, #c6007e);
     border-radius: 10px;
 }
 
-::-webkit-scrollbar-track {
+.panel.color-1 ::-webkit-scrollbar-thumb {
+    background: linear-gradient( 343deg, #b70707, #ca000075);
+    border-radius: 10px;
+}
+
+ ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
 
+body footer {
+    border-top: 0px;
+    margin: 0;
+}
+
 @media screen and (max-width: 600px) {
+    .container {
+        margin: 0px;
+        padding: 0px !important
+    }
     .show-content {
         padding: 5px;
     }
     .tab-contents {
         background: transparent;
-        padding: 0px;
+        padding: 20px;
     }
     .tooltip-parent {
-        margin: 0 0 0 39%;
+        margin: 0 0 0 33%;
+    }
+    #switcher li {
+        left: 0px;
+        top: auto;
+        right: auto;
+    }
+    #toTopBtn {
+        right: 0px;
+    }
+    .side-button {
+        bottom: 0px !important;
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        padding: 5px;
+    }
+    .collapse.in {
+        padding: 0px;
+    }
+    .panel-body {
+        margin: 0px;
+    }
+    #accordion .panel>a {
+        font-size: 20px;
+    }
+    .panel-title {
+        font-size: 18px !important;
     }
 }
 
