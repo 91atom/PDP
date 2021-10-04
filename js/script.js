@@ -109,3 +109,42 @@ function CopyToClipboard(text) {
         }
     }
 }
+var toTopbutton = document.getElementById("toTopBtn");
+
+window.onscroll = function() { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        toTopbutton.style.display = "flex";
+    } else {
+        toTopbutton.style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+var colorSwitcherBtn1 = document.getElementById('firstColor');
+var colorSwitcherBtn2 = document.getElementById('secondColor');
+var colorSets1 = document.querySelectorAll('.panel');
+
+colorSwitcherBtn1.onclick = function() {
+    document.getElementsByTagName('body')[0].style.backgroundColor = 'darkred';
+    colorSwitcherBtn1.classList.toggle('hide');
+    colorSwitcherBtn2.classList.toggle('hide');
+    toTopbutton.classList.add('color-1');
+    for (var i = 0; i < colorSets1.length; i++) {
+        colorSets1[i].classList.add('color-1');
+    };
+};
+colorSwitcherBtn2.onclick = function() {
+    document.getElementsByTagName('body')[0].style.backgroundColor = 'white';
+    colorSwitcherBtn1.classList.toggle('hide');
+    colorSwitcherBtn2.classList.toggle('hide');
+    toTopbutton.classList.remove('color-1');
+    for (var i = 0; i < colorSets1.length; i++) {
+        colorSets1[i].classList.remove('color-1');
+    };
+};
