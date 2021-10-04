@@ -10,9 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <ul id="switcher">
+        <li id="firstColor" class="side-button">Red</li>
+        <li id="secondColor" class="hide side-button">DFLT</li>
+    </ul>
     <div class="container">
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
@@ -21,13 +34,13 @@
                         <a data-toggle="collapse" data-parent="#accordion" href="#title1">Different Features</a>
                     </h4>
                 </div>
-                <div id="title1" class="panel-collapse collapse in">
+                <div id="title1" class="titles panel-collapse collapse in">
                     <div class="panel-body">
                         <div class="panel-group" id="accordion">
                             <div class="panel">
                                 <a data-toggle="collapse" href="#title1-1">Dynamic tabs</a>
                             </div>
-                            <div id="title1-1" class="panel-collapse collapse in">
+                            <div id="title1-1" class="titles panel-collapse collapse in">
                                 <div class="panel-body">
                                     <div class="accessible-tabs-container">
                                         <div class="show-content">
@@ -451,7 +464,7 @@
                             <div class="panel">
                                 <a data-toggle="collapse" href="#title1-2">Responsive Table(with background images)</a>
                             </div>
-                            <div id="title1-2" class="panel-collapse collapse in">
+                            <div id="title1-2" class="titles panel-collapse collapse in">
                                 <div class="panel-body">
                                     <div class="accessible-tabs-container">
                                         <div class="show-content">
@@ -1342,7 +1355,7 @@
                             <div class="panel">
                                 <a data-toggle="collapse" href="#title1-3">Replacing Value with Java Script</a>
                             </div>
-                            <div id="title1-3" class="panel-collapse collapse in">
+                            <div id="title1-3" class="titles panel-collapse collapse in">
                                 <div class="panel-body">
                                     <div class="accessible-tabs-container">
                                         <div class="show-content">
@@ -1466,7 +1479,7 @@
                         <div class="panel">
                             <a data-toggle="collapse" href="#title2-1">Menu Optifibre</a>
                         </div>
-                        <div id="title2-1" class="panel-collapse collapse in">
+                        <div id="title2-1" class="titles panel-collapse collapse in">
                             <div class="panel-body">
                                 <div class="accessible-tabs-container">
                                     <div class="show-content">
@@ -3216,7 +3229,7 @@
                         <div class="panel">
                             <a data-toggle="collapse" href="#title2-2">Menu PL New</a>
                         </div>
-                        <div id="title2-2" class="panel-collapse collapse in">
+                        <div id="title2-2" class="titles panel-collapse collapse in">
                             <div class="panel-body">
                                 <div class="accessible-tabs-container">
                                     <div class="show-content">
@@ -6294,7 +6307,7 @@
                         <div class="panel">
                             <a data-toggle="collapse" href="#title2-3">Menu PL Old</a>
                         </div>
-                        <div id="title2-3" class="panel-collapse collapse in">
+                        <div id="title2-3" class="titles panel-collapse collapse in">
                             <div class="panel-body">
                                 <div class="accessible-tabs-container">
                                     <div class="show-content">
@@ -6591,7 +6604,7 @@
                                         <div class="ons-headerPLTwo">
                                             <div class="desktopMenuPLTwo">
                                                 <a href="#" class="desktopLogo">
-                                                    <img src="https://www.nestlehealthscience.pl/sites/g/files/dnigna346/files/asset-library/PublishingImages/info/logo-header.png" alt="Nestle-logo" class="mobLogo">
+                                                    <img src="../PDP/img/logo-header.png" alt="Nestle-logo" class="mobLogo">
                                                 </a>
                                                 <ul class="navigationPLTWO custom-ulPLTwo">
                                                     <li class="custom-li-mainPLTwo"><a href="/poradnik-zywienia-medycznego/aktualnosci">Aktualności</a>
@@ -7923,6 +7936,7 @@
         </div>
     </div>
     <footer>
+        <button onclick="topFunction()" id="toTopBtn" title="Go to top" class="side-button">Top</button>
         <div class="materials">
             <p>Materials used:</p><br>
             <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion">W3Schools accordion</a><br>
@@ -7944,6 +7958,9 @@
             <a href="https://css-tricks.com/snippets/css/keyframe-animation-syntax/">Keyframe animation syntax</a><br>
             <a href="https://stackoverflow.com/questions/52672299/smooth-rotation-in-css-keyframe-animation">Smooth rotation in css keyframe animation</a><br>
             <a href="https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp">How to css custom scrollbar</a><br>
+            <a href="https://www.w3schools.com/howto/howto_js_scroll_to_top.asp">JS scroll to top</a>
+            <a href="https://codepen.io/nevan/pen/kBItz">Color Switcher</a>
+
         </div>
 
     </footer>
