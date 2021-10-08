@@ -128,23 +128,14 @@ function topFunction() {
 
 var colorSwitcherBtn1 = document.getElementById('firstColor');
 var colorSwitcherBtn2 = document.getElementById('secondColor');
-var colorSets1 = document.querySelectorAll('.panel');
-
+var mainBody = document.querySelector('.main-body');
 colorSwitcherBtn1.onclick = function() {
-    document.getElementsByTagName('body')[0].style.backgroundColor = 'darkred';
+    mainBody.classList.add('color-swither-1');
     colorSwitcherBtn1.classList.toggle('hide');
     colorSwitcherBtn2.classList.toggle('hide');
-    toTopbutton.classList.add('color-1');
-    for (var i = 0; i < colorSets1.length; i++) {
-        colorSets1[i].classList.add('color-1');
-    };
 };
 colorSwitcherBtn2.onclick = function() {
-    document.getElementsByTagName('body')[0].style.backgroundColor = 'white';
+    mainBody.classList.remove('color-swither-1');
     colorSwitcherBtn1.classList.toggle('hide');
     colorSwitcherBtn2.classList.toggle('hide');
-    toTopbutton.classList.remove('color-1');
-    for (var i = 0; i < colorSets1.length; i++) {
-        colorSets1[i].classList.remove('color-1');
-    };
 };
