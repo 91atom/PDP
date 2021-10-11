@@ -275,7 +275,7 @@ body.color-swither-1 {
     border-radius: 130px;
     border-top-left-radius: 130px;
     border-top-right-radius: 0px;
-    margin: 0 0 0 10%;
+    margin: 0 0 0 100px;
 }
 
 body.color-swither-1 .panel .tooltip-parent {
@@ -532,7 +532,7 @@ body.color-swither-1 .panel ::-webkit-scrollbar-corner {
     border-radius: 10px;
 }
 
-body.color-swither-1.panel ::-webkit-scrollbar-thumb {
+body.color-swither-1 ::-webkit-scrollbar-thumb {
     background: linear-gradient( 343deg, #b70707, #ca000075);
     border-radius: 10px;
 }
@@ -560,7 +560,7 @@ body footer {
         padding: 20px;
     }
     .tooltip-parent {
-        margin: 0 0 0 39%;
+        margin: 0 0 0 33%;
     }
     #switcher li {
         left: 0px;
