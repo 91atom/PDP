@@ -275,7 +275,7 @@ body.color-swither-1 {
     border-radius: 130px;
     border-top-left-radius: 130px;
     border-top-right-radius: 0px;
-    margin: 0 0 0 100px;
+    margin: 0 0 0 10%;
 }
 
 body.color-swither-1 .panel .tooltip-parent {
@@ -405,7 +405,7 @@ button.copyableInputButton:active {
 xmp {
     overflow-y: auto;
     font-size: 10px;
-    height: 550px;
+    height: 400px;
     width: 100%;
     white-space: pre-line;
     display: block;
@@ -560,7 +560,7 @@ body footer {
         padding: 20px;
     }
     .tooltip-parent {
-        margin: 0 0 0 33%;
+        margin: 0 0 0 39%;
     }
     #switcher li {
         left: 0px;
